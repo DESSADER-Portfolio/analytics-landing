@@ -1,0 +1,56 @@
+@import "../utils/font-face";
+
+@include font-face(
+  $name: "Inter",
+  $path: "#{$font-root-path}/Inter/Inter-Light",
+  $formats: (
+    ttf: (ext: "ttf", name: "truetype"),
+    woff: (ext: "woff", name: "woff"),
+    woff2: (ext: "woff2", name: "woff2")
+  ),
+  $weight: 300
+);
+
+@include font-face(
+  $name: "Inter",
+  $path: "#{$font-root-path}/Inter/Inter-Regular",
+  $formats: (
+    ttf: (ext: "ttf", name: "truetype"),
+    woff: (ext: "woff", name: "woff"),
+    woff2: (ext: "woff2", name: "woff2")
+  ),
+  $weight: 400
+);
+
+@include font-face(
+  $name: "Inter",
+  $path: "#{$font-root-path}/Inter/Inter-Medium",
+  $formats: (
+    ttf: (ext: "ttf", name: "truetype"),
+    woff: (ext: "woff", name: "woff"),
+    woff2: (ext: "woff2", name: "woff2")
+  ),
+  $weight: 500
+);
+
+@include font-face(
+  $name: "Inter",
+  $path: "#{$font-root-path}/Inter/Inter-Semibold",
+  $formats: (
+    ttf: (ext: "ttf", name: "truetype"),
+    woff: (ext: "woff", name: "woff"),
+    woff2: (ext: "woff2", name: "woff2")
+  ),
+  $weight: 600
+);
+
+@include font-face(
+  $name: "Inter",
+  $path: "#{$font-root-path}/Inter/Inter-Bold",
+  $formats: (
+    ttf: (ext: "ttf", name: "truetype"),
+    woff: (ext: "woff", name: "woff"),
+    woff2: (ext: "woff2", name: "woff2")
+  ),
+  $weight: 700
+);

@@ -1,0 +1,56 @@
+{
+  "name": "Analytics",
+  "meta": {
+    "description": "Analyze and improve your product in detail",
+    "keywords": ["analytics", "data", "stats"]
+  },
+  "navigation": {
+    "header": {
+      "menu": [
+        { "label": "How it works", "link": "#" },
+        { "label": "Features", "link": "#" },
+        { "label": "Pricing", "link": "#" },
+        { "label": "About", "link": "#" },
+        { "label": "Contacts", "link": "#" }
+      ],
+      "extra": [
+        { "label": "Sign in", "link": "#", "type": "secondary" },
+        { "label": "Try for free", "link": "#", "type": "primary" }
+      ]
+    },
+    "footer": {
+      "menu": {
+        "Home": [
+          { "label": "Become Affiliate", "link": "#" },
+          { "label": "Go Unlimited", "link": "#" },
+          { "label": "Services", "link": "#" }
+        ],
+        "Products": [
+          { "label": "Design Systems", "link": "#" },
+          { "label": "Themes & Templates", "link": "#" },
+          { "label": "Mockups", "link": "#" },
+          { "label": "Presentations", "link": "#" },
+          { "label": "Wireframes Kits", "link": "#" },
+          { "label": "UI Kits", "link": "#" }
+        ],
+        "Legals": [
+          { "label": "License", "link": "#" },
+          { "label": "Refund Policy", "link": "#" },
+          { "label": "About Us", "link": "#" },
+          { "label": "Contacts", "link": "#" }
+        ],
+        "Blog": [
+          { "label": "Business Stories", "link": "#" },
+          { "label": "Digital Store", "link": "#" },
+          { "label": "Learning", "link": "#" },
+          { "label": "Social Media", "link": "#" }
+        ]
+      },
+      "social": [
+        { "title": "facebook", "link": "#" },
+        { "title": "instagram", "link": "#" },
+        { "title": "twitter", "link": "#" }
+      ]
+    }
+  }
+}
