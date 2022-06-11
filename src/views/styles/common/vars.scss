@@ -18,21 +18,21 @@ $font-root-path: "../../assets/fonts";
 */
 
 $grid-column-count: 12;
-$grid-column-gap: 20px;
+$grid-column-gap: 30px;
 
 $container-width: (
-  default: 1140px,
-  xl: 960px,
-  lg: 720px,
-  md: 540px,
+  default: 1290px,
+  xl: 1100px,
+  lg: 870px,
+  md: 690px,
   sm: 100%,
 );
 
 $breakpoints: (
-  xl: 1200px,
-  lg: 990px,
-  md: 770px,
-  sm: 580px,
+  xl: 1350px,
+  lg: 1140px,
+  md: 920px,
+  sm: 730px,
 );
 
 /*
