@@ -14,8 +14,8 @@
         { "label": "Contacts", "link": "#" }
       ],
       "extra": [
-        { "label": "Sign in", "link": "#", "type": "secondary" },
-        { "label": "Try for free", "link": "#", "type": "primary" }
+        { "label": "Sign in", "link": "#", "variant": "secondary" },
+        { "label": "Try for free", "link": "#", "variant": "primary-blue" }
       ]
     },
     "footer": {

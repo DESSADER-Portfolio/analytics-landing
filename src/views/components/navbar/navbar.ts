@@ -13,6 +13,7 @@ class Navbar implements INavbar {
   public options: NavbarOptions;
 
   private menu: HTMLElement;
+  private menuLinks: HTMLAnchorElement[];
   private menuActiveClass: string;
   private menuIsActive: boolean;
 
@@ -25,6 +26,7 @@ class Navbar implements INavbar {
     const { control, onChange } = options;
 
     this.menu = document.querySelector(element);
+    this.menuLinks = Array.from(this.menu.querySelectorAll(".nav__link"));
     this.menuActiveClass = this.menu.classList[0] + ":active";
     this.menuIsActive = this.menu.classList.contains(this.menuActiveClass);
 
@@ -41,6 +43,10 @@ class Navbar implements INavbar {
       this.menuIsActive 
         ? this.close() 
         : this.open();
+    });
+
+    this.menuLinks.forEach((link) => {
+      link.addEventListener("click", () => this.menuIsActive ? this.close() : null);
     });
   }
 
