@@ -1,0 +1,5 @@
+$root-class: "index-page";
+
+.#{$root-class} {
+  @import "_blocks/blocks";
+}

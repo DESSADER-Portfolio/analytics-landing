@@ -1,0 +1,104 @@
+mixin sectionIntro(props = {})
+  - const rootClassName = "section-intro";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const description = props.description || "";
+  - const inputPlaceholder = props.inputPlaceholder || "";
+  - const buttonLabel = props.buttonLabel || "";
+  - const label = props.label || "";
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "pt-48",
+      "sm:pt-24"
+    ];
+
+  // Start: [Section: intro]
+  section(
+    class = classes 
+    style = style
+  )
+
+    // Start: [Container] 
+    +container()
+
+      // Start: [Grid] 
+      +grid({class: "align-items-center"})
+
+        // Start: [Column 5] 
+        +column({class: ["column-5", "lg:column-6", "md:column-12"]})
+          +typography({
+            class: ["mb-32", "sm:mb-24"],
+            as: "h1",
+            variant: "h1"
+          })
+            each str in heading
+              span
+                span #{str}
+          +typography({class: ["mb-24", "sm:md-16"], variant: "body-large"})
+            | #{description}
+          // Start: [Stack] 
+          +stack({class: [`${rootClassName}__form`, "mb-24", "sm:flex-direction-column"]})
+            +textField({class: `${rootClassName}__text-field`, placeholder: inputPlaceholder})
+            +button({
+              class: `${rootClassName}__button`, 
+              label: buttonLabel, 
+              variant: "primary-blue", 
+              size: "md"
+            })
+          +typography({class: `${rootClassName}__label`, variant: "body-small"})
+            | #{label}
+          // End: [Stack] 
+        // End: [Column 5]
+
+        // Start: [Column 7] 
+        +column({class: ["column-7", "lg:column-6", "md:display-none"]})
+          div(class = `${rootClassName}__illustration`)
+        // End: [Column 7]  
+      // End: [Grid] 
+    // End: [Container]
+
+    // Start: [Container] 
+    +container()
+
+      // Start: [Stack] 
+      +stack({
+        class: [
+          `${rootClassName}__partners`,
+          "justify-content-space-around", 
+          "flex-wrap-wrap", 
+          "pt-64", 
+          "pb-44",
+          "sm:py-24"
+        ]
+      })
+        div(
+          class = "company-item"
+          style = `background-image: url(${require(`../../../assets/images/logo-airbnb.svg`)})`
+        )
+        div(
+          class = "company-item"
+          style = `background-image: url(${require(`../../../assets/images/logo-rakuten.svg`)})`
+        )
+        div(
+          class = "company-item"
+          style = `background-image: url(${require(`../../../assets/images/logo-google.svg`)})`
+        )
+        div(
+          class = "company-item"
+          style = `background-image: url(${require(`../../../assets/images/logo-invision.svg`)})`
+        )
+        div(
+          class = "company-item"
+          style = `background-image: url(${require(`../../../assets/images/logo-stripe.svg`)})`
+        )
+        div(
+          class = "company-item"
+          style = `background-image: url(${require(`../../../assets/images/logo-zendesk.svg`)})`
+        )
+      
+      // End: [Stack]  
+    // End: [Container] 
+  // End: [Section: intro] 

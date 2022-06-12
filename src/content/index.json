@@ -1,3 +1,16 @@
 {
-  "title": "Home"
+  "title": "Home",
+  "sections": {
+    "intro": {
+      "heading": [
+        "Analyze and",
+        "improve your",
+        "product in detail"
+      ],
+      "description": "With analytics, you can get answers about what happened, why, and how to improve your results",
+      "inputPlaceholder": "Enter email",
+      "buttonLabel": "Try for free",
+      "label": "Free of charge for 7 days. Without a subscription"
+    }
+  }
 }
