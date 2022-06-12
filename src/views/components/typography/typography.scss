@@ -2,7 +2,9 @@ $root-class: "typography";
 
 $heading-variants: (
   h1: (
-    default: (font-size: 62px, line-height: 80px, letter-spacing: -4px)
+    default: (font-size: 62px, line-height: 80px, letter-spacing: -4px),
+    xl: (font-size: 52px, line-height: 70px, letter-spacing: -3px),
+    lg: (font-size: 42px, line-height: 60px, letter-spacing: -3px)
   ),
   h3: (
     default: (font-size: 45px, line-height: 55px, letter-spacing: -1.6px)
@@ -25,9 +27,9 @@ $heading-variants: (
   */
 
   @each $heading, $breakpoints in $heading-variants {
-    font-weight: map-get($map: $font-weights, $key: medium);
-
     &\:variant-#{$heading} {
+      font-weight: map-get($map: $font-weights, $key: medium);
+
       @each $breakpoint-name, $breakpoint-styles in $breakpoints {
         $current-breakpoint-style: map-get($map: $breakpoints, $key: $breakpoint-name);
         @if $breakpoint-name == default {
