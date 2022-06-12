@@ -1,0 +1,21 @@
+$root-class: "section-analytics";
+
+.#{$root-class} {
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+  }
+
+  @include breakpoint(sm) {
+    &__items {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+
+    .analytics-item {
+      border: 1px solid $black-050;
+      border-radius: 10px;
+    }
+  }
+}
