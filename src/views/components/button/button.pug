@@ -1,23 +1,34 @@
 mixin button(props = {})
   - const elements = ["button", "a"];
+  - const sizes = ["sm", "md"];
+  - const variants = ["secondary", "primary-blue", "primary-black"];
   
   - const rootClassName = "button";
   - const className = props.class || null;
   - const style = props.style || null;
   - const as = elements.includes(props.as) ? props.as : elements[0];
+  - const label = props.label || null;
+  - const icon = props.icon || null;
+  - const size = sizes.includes(props.size) ? props.size : sizes[0];
+  - const variant = variants.includes(props.variant) ? props.variant : variants[0];
   - const link = props.as === "a" ? props.link : null;
   - const id = props.id || null;
   -
     const classes = [
       rootClassName,
+      {[`${rootClassName}:size-${size}`]: size},
+      {[`${rootClassName}:variant-${variant}`]: variant},
+      {[`${rootClassName}:with-icon`]: icon && label},
+      {[`${rootClassName}:only-icon`]: icon && !label},
       className
     ];
-
   #{as}(
     class = classes
     href = link
     id = id
     style = style
-  )
-    span(class = `${rootClassName}__text`)
-      block
+  ) 
+    if label
+      span(class = `${rootClassName}__text`) #{label}
+    if icon
+      +icon({class: `${rootClassName}__icon`, icon: icon})

@@ -5,11 +5,137 @@ $root-class: "button";
   justify-content: center;
   align-items: center;
   border: 1px solid transparent;
-  background: #CCCCCC;
   font-family: $font-family;
-  font-weight: map-get($map: $font-weights, $key: semibold);
   text-decoration: none;
   cursor: pointer;
   transition-duration: 0.3s;
   transition-property: background, border-color, color;
+
+  /*
+  * Elements
+  */
+
+  &__icon {
+    display: flex;
+  }
+
+  &__text {
+    line-height: 20px;
+  }
+
+  /*
+  * Sizes
+  */
+
+  &\:size-sm {
+    padding: 10px 14px;
+    border-radius: 10px;
+
+    .#{$root-class}__icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    .#{$root-class}__text {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    &.#{$root-class}\:with-icon {
+      gap: 8px;
+    }
+
+    &.#{$root-class}\:only-icon {
+      padding: 12px;
+    }
+  }
+
+  &\:size-md {
+    padding: 15px 19px;
+    border-radius: 10px;
+
+    .#{$root-class}__icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    .#{$root-class}__text {
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    &.#{$root-class}\:with-icon {
+      gap: 12px;
+    }
+
+    &.#{$root-class}\:only-icon {
+      padding: 18px;
+    }
+  }
+
+  /*
+  * Variants
+  */
+
+  &\:variant-secondary {
+    background: transparent;
+
+    .#{$root-class}__icon {
+      fill: $black-500;
+    }
+
+    .#{$root-class}__text {
+      color: $black-500;
+    }
+
+    &:hover {
+      border-color: $black-050;
+    }
+
+    &:active {
+      background: $black-050;
+    }
+  }
+
+  &\:variant-primary-blue {
+    background: $blue-500;
+
+    .#{$root-class}__icon {
+      fill: $neutral-white;
+    }
+
+    .#{$root-class}__text {
+      color: $neutral-white;
+    }
+
+    &:hover {
+      background: $blue-400;
+    }
+
+    &:active {
+      background: $blue-600;
+    }
+  }
+
+  &\:variant-primary-black {
+    background: $black-500;
+
+    .#{$root-class}__icon {
+      fill: $neutral-white;
+    }
+
+    .#{$root-class}__text {
+      color: $neutral-white;
+    }
+
+    &:hover {
+      background: $black-400;
+    }
+
+    &:active {
+      background: $black-600;
+    }
+  }
 }
