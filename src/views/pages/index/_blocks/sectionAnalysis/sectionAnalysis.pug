@@ -1,0 +1,89 @@
+mixin sectionAnalysis(props = {})
+  - const rootClassName = "section-analysis";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const description = props.description || "";
+  - const buttonLabel = props.buttonLabel || "";
+  - const items = props.items || [];
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "py-96",
+      "sm:py-32"
+    ];
+
+  // Start: [Section: analysis] 
+  section(
+    class = classes 
+    style = style
+  )
+    
+    // Start: [Container] 
+    +container()
+
+      // Start: [Grid] 
+      +grid({
+        class: [
+          "align-items-center", 
+          "lg:flex-direction-column-reverse",
+          "lg:align-items-flex-start"
+        ]
+      })
+
+        // Start: [Column 6] 
+        +column({class: ["column-6", "lg:column-8", "md:column-12"]}) 
+          +sectionHeading({
+            class: "mb-24",
+            heading: heading,
+            description: description
+          })
+          +button({
+            class: ["mb-44", "sm:mb-24"],
+            label: buttonLabel, 
+            variant: "primary-blue",
+            size: "md",
+            icon: "arrow-right"
+          })
+          
+          // Start: [Stack: items] 
+          +stack({
+            class: [
+              `${rootClassName}__items`, 
+              "sm:flex-direction-column"
+            ]
+          })
+            
+            each item in items
+              // Start: [analysis-item] 
+              +stack({
+                class: [
+                  "analysis-item", 
+                  "flex-direction-column", 
+                  "sm:px-24", 
+                  "sm:py-20"
+                ]
+              })
+                +typography({
+                  class: "mb-8", 
+                  variant: "body-large", 
+                  weight: "medium"
+                })
+                  | #{item.title}
+                +typography({variant: "body-default"})
+                  | #{item.description}
+              // End: [analysis-item] 
+          // End: [Stack: items] 
+        // End: [Column 6]
+
+        // Start: [Column 6] 
+        +column({class: ["column-6", "lg:column-12"]})
+          img(
+            class = [`${rootClassName}__image`, "lg:mb-24"]
+            src = require("../../../assets/images/chart.png")
+          )
+        // End: [Column 6] 
+      // End: [Grid] 
+    // End: [Container] 
+  // End: [Section: analysis] 

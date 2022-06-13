@@ -1,0 +1,22 @@
+$root-class: "section-analysis";
+
+.#{$root-class} {
+  &__image {
+    width: 100%;
+  }
+
+  &__items {
+    gap: 40px;
+  }
+
+  @include breakpoint(sm) {
+    &__items {
+      gap: 20px;
+    }
+
+    .analysis-item {
+      border: 1px solid $black-050;
+      border-radius: 10px;
+    }
+  }
+}

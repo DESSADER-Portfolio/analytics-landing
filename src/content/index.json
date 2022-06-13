@@ -28,6 +28,18 @@
         { "title": "Audience activity", "description": "Analytics shows the number of pages visited by the user. From here the average visitor interest is calculated" },
         { "title": "Traffic sources by group", "description": "Information on transitions from various traffic sources: search engines, ad block, website, forum" }
       ]
+    },
+    "analysis": {
+      "heading": [
+        "Affordable product",
+        "analysis for everyone"
+      ],
+      "description": "When you collect and analyze a lot of data, you can make effective decisions: turn off unprofitable ads or modify the interface. Control all processes on your site",
+      "buttonLabel": "Explore All",
+      "items": [
+        { "title": "Traffic", "description": "Information on transitions from various traffic sources" },
+        { "title": "Attendance", "description": "Shows how many people have entered the site" }
+      ]
     }
   }
 }
