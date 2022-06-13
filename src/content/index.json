@@ -20,6 +20,14 @@
         { "title": "Audience activity", "description": "Analytics shows the number of pages visited by the user. From here the average visitor interest is calculated" },
         { "title": "Traffic sources by group", "description": "Information on transitions from various traffic sources: search engines, ad block, website, forum" }
       ]
+    },
+    "preview": {
+      "heading": ["How Analytics works"],
+      "items": [
+        { "title": "Popular Pages", "description": "Analytics calculates the number of views for each page and allows you to find out the most visited" },
+        { "title": "Audience activity", "description": "Analytics shows the number of pages visited by the user. From here the average visitor interest is calculated" },
+        { "title": "Traffic sources by group", "description": "Information on transitions from various traffic sources: search engines, ad block, website, forum" }
+      ]
     }
   }
 }
