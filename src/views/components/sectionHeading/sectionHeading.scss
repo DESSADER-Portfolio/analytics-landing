@@ -1,7 +1,20 @@
 $root-class: "section-heading";
 
 .#{$root-class} {
-  &__description {
-    color: $black-300;
+  &\:color-dark {
+    .#{$root-class}__heading {
+      color: $black-500;
+    }
+
+    .#{$root-class}__description {
+      color: $black-300;
+    }
+  }
+
+  &\:color-light {
+    .#{$root-class}__heading,
+    .#{$root-class}__description {
+      color: $neutral-white;
+    }
   }
 }
