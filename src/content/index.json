@@ -52,6 +52,22 @@
         { "title": "Penetration tests", "description": "We instruct security experts to conduct tests to find our vulnerabilities" },
         { "title": "No credit card data", "description": "The best way we can protect your credit card info is to not get it at all" }
       ]
+    },
+    "features": {
+      "heading": [
+        "All features for better",
+        "product analytics"
+      ],
+      "description": "With analytics, you can get answers to what happened, why and how to improve the results",
+      "items": [
+        "Attendance",
+        "Audience activity",
+        "Traffic source",
+        "Popular pages",
+        "Bounce rate",
+        "Country report"
+      ],
+      "buttonLabel": "Explore All"
     }
   }
 }

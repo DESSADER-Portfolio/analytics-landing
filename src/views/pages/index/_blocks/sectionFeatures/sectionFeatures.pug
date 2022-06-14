@@ -1,0 +1,65 @@
+mixin sectionFeatures(props = {})
+  - const rootClassName = "section-features";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const description = props.description || "";
+  - const items = props.items || [];
+  - const buttonLabel = props.buttonLabel || "";
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "py-96",
+      "sm:py-32"
+    ];
+
+  // Start: [Section: features] 
+  section(
+    class = classes 
+    style = style
+  )
+
+    // Start: [Container] 
+    +container()
+
+      // Start: [Grid] 
+      +grid({class: ["align-items-center", "justify-content-space-between"]})
+
+        // Start: [Column 5] 
+        +column({class: ["column-5", "md:display-none"]})
+          img(
+            class = `${rootClassName}__image`
+            src = require("../../../assets/images/illustration-2.svg")
+          )
+        // End: [Column 5]
+
+        // Start: [Column 6] 
+        +column({class: ["column-6", "md:column-12"]})
+          +sectionHeading({
+            class: "mb-24",
+            heading: heading,
+            description: description
+          })
+
+          // Start: [Items] 
+          div(class = [`${rootClassName}__items`, "mb-24"])
+            each item in items
+              // Start: [Stack: feature-item] 
+              +stack({class: ["feature-item", "align-items-center"]})
+                +icon({class: ["mr-12", "feature-item__icon"], icon: "check"})
+                +typography({variant: "body-default"})
+                  | #{item}
+              // End: [Stack: feature-item] 
+          // End: [Items]
+
+          +button({
+            label: buttonLabel,
+            variant: "primary-blue", 
+            icon: "arrow-right",
+            size: "md",
+          })
+        // End: [Column 6]
+      // End: [Grid] 
+    // End: [Container] 
+  // End: [Section: features] 
