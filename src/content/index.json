@@ -40,6 +40,18 @@
         { "title": "Traffic", "description": "Information on transitions from various traffic sources" },
         { "title": "Attendance", "description": "Shows how many people have entered the site" }
       ]
+    },
+    "security": {
+      "heading": [
+        "Keeping your data",
+        "secure is our priority"
+      ],
+      "items": [
+        { "title": "Data is encrypted", "description": "Your data in transit is encrypted using secure cryptographic protocols" },
+        { "title": "No access", "description": "All data required by our systems is not available without your official request" },
+        { "title": "Penetration tests", "description": "We instruct security experts to conduct tests to find our vulnerabilities" },
+        { "title": "No credit card data", "description": "The best way we can protect your credit card info is to not get it at all" }
+      ]
     }
   }
 }

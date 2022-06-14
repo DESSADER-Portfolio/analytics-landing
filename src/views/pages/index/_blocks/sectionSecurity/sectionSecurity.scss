@@ -1,0 +1,43 @@
+$root-class: "section-security";
+
+.#{$root-class} {
+  background: $blue-500;
+  color: $neutral-white;
+
+  &__items {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 15px;
+      width: 95%;
+      height: 2px;
+      background: linear-gradient(90deg, $neutral-white 48.64%, rgba(255 255 255 / 0%) 99.87%);
+    }
+  }
+
+  .security-item {
+    border-radius: 10px;
+
+    &__dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: $neutral-white;
+    }
+  }
+
+  @include breakpoint(md) {
+    &__items {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  @include breakpoint(sm) {
+    .security-item {
+      border: 1px solid $blue-400;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+mixin sectionSecurity(props = {})
+  - const rootClassName = "section-security";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const items = props.items || [];
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "py-96",
+      "sm:py-32"
+    ];
+
+  // Start: [Section: security] 
+  section(
+    class = classes 
+    style = style
+  )
+
+    // Start: [Container] 
+    +container()
+      +sectionHeading({
+        class: "mb-32",
+        heading: heading, 
+        color: "light"
+      })
+
+      // Start: [Grid] 
+      +grid({class: `${rootClassName}__items`})
+
+        each item in items
+          // Start: [Column 3] 
+          +column({class: ["column-3", "md:column-6", "sm:column-12"]})
+            // Start: [Stack: security-item] 
+            +stack({
+              class: [
+                "security-item", 
+                "flex-direction-column",
+                "pr-28",
+                "xl:pr-0",
+                "md:mb-32",
+                "sm:px-24", 
+                "sm:py-16", 
+                "sm:mb-12"
+              ]
+            })
+              div(class = ["security-item__dot", "mb-24", "md:display-none"])
+              +typography({
+                class: "mb-8",
+                variant: "body-large", 
+                weight: "medium"
+              })
+                | #{item.title}
+              +typography({variant: "body-default"})
+                | #{item.description}
+            // End: [Stack: security-item] 
+          // End: [Column 3] 
+      // End: [Grid] 
+    // End: [Container] 
+  // End: [Section: security] 
