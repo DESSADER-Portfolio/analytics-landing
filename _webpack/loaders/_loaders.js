@@ -22,6 +22,7 @@ const fontsLoader = require("./fontsLoader");
 const pugLoader = require("./pugLoader");
 const lessLoader = require("./lessLoader");
 const sassLoader = require("./sassLoader");
+const cssLoader = require("./cssLoader");
 const iconsLoader = require("./iconsLoader");
 
 module.exports = [
@@ -32,5 +33,6 @@ module.exports = [
   pugLoader,
   lessLoader,
   sassLoader,
+  cssLoader,
   iconsLoader
 ];
