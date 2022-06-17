@@ -68,6 +68,38 @@
         "Country report"
       ],
       "buttonLabel": "Explore All"
+    },
+    "reviews": {
+      "heading": ["1M+ users trust Analytics worldwide"],
+      "items": [
+        { 
+          "text": "Thanks to Analytics, we were able to effectively grow our digital business. We have quadrupled our view conversion rate, reduced costs and saved time. We really like the analytics service",
+          "author": {
+            "photoId": 1,
+            "name": "Esther Howard",
+            "position": "Marketer",
+            "company": "rakuten"
+          }
+        },
+        { 
+          "text": "Thanks to Analytics, we were able to effectively grow our digital business. We have quadrupled our view conversion rate, reduced costs and saved time. We really like the analytics service",
+          "author": {
+            "photoId": 1,
+            "name": "Esther Howard",
+            "position": "Marketer",
+            "company": "rakuten"
+          }
+        },
+        { 
+          "text": "Thanks to Analytics, we were able to effectively grow our digital business. We have quadrupled our view conversion rate, reduced costs and saved time. We really like the analytics service",
+          "author": {
+            "photoId": 1,
+            "name": "Esther Howard",
+            "position": "Marketer",
+            "company": "rakuten"
+          }
+        }
+      ]
     }
   }
 }

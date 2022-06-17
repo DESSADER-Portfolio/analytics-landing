@@ -1,0 +1,35 @@
+$root-class: "section-reviews";
+
+.#{$root-class} {
+  .review-item {
+    &__photo {
+      flex: 0 0 auto;
+      width: 480px;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &__position {
+      color: $black-200;
+    }
+  }
+
+  @include breakpoint(xl) {
+    .review-item {
+      &__photo {
+        width: 400px;
+      }
+    }
+  }
+
+  @include breakpoint(sm) {
+    .review-item {
+      &__photo {
+        width: 100%;
+      }
+    }
+  }
+}

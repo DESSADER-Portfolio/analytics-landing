@@ -1,0 +1,72 @@
+mixin sectionReviews(props = {})
+  - const rootClassName = "section-reviews";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const items = props.items || [];
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "py-96",
+      "sm:py-32"
+    ];
+
+  // Start: [Section: reviews] 
+  section(
+    class = classes 
+    style = style
+  )
+    
+    // Start: [Container] 
+    +container()
+      +sectionHeading({
+        class: ["text-align-center", "mb-44"], 
+        heading: heading
+      })
+
+      // Start: [Slider] 
+      +slider({id: "reviews-slider", class: "reviews-slider"})
+        each item in items
+          +slide()
+            // Start: [Stack: review-item] 
+            +stack({
+              class: [
+                "review-item", 
+                "align-items-center", 
+                "lg:flex-direction-column"
+              ]
+            })
+              div(class = ["review-item__photo", "lg:mb-24"])
+                img(
+                  src = require(`../../../assets/images/user-${item.author.photoId}.png`)
+                )
+              +stack({
+                class: [
+                  "review-item__content", 
+                  "flex-direction-column", 
+                  "px-44", 
+                  "lg:px-0"
+                ]
+              })
+                +typography({
+                  class: "mb-24", 
+                  variant: "body-large"
+                })
+                  | #{item.text}
+                +typography({
+                  variant: "body-default", 
+                  weight: "semibold"
+                })
+                  | #{item.author.name}
+                +typography({
+                  class: ["review-item__position", "mb-24"], 
+                  variant: "body-small"
+                })
+                  | #{item.author.position}
+                div()
+                  img(src = require(`../../../assets/images/logo-${item.author.company}.svg`) style = "display: block")
+            // End: [Stack: review-item] 
+      // End: [Slider] 
+    // End: [Container] 
+  // End: [Section: reviews] 
