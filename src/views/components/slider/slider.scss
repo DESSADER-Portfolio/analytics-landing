@@ -1,38 +1,28 @@
+$root-class: "slider";
+
 @import "~swiper/css";
 @import "~swiper/css/navigation";
 @import "~swiper/css/pagination";
 
-.slider {
-  .nav-button {
-    position: absolute;
-    top: 50%;
+.#{$root-class} {
+  &__main {
+    gap: 30px;
+  }
+
+  &__nav-button {
     border: 1px solid $black-050;
     border-radius: 50%;
-    transform: translateY(-50%);
   }
 
-  .button-prev {
-    left: -60px;
-  }
-
-  .button-next {
-    right: -60px;
-  }
-
-  .swiper-pagination {
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    z-index: 9999;
-
-    &-bullet {
+  &__pagination {
+    .swiper-pagination-bullet {
       width: 60px;
       height: 4px;
       border-radius: 4px;
       background: $black-200;
     }
 
-    &-bullet-active {
+    .swiper-pagination-bullet-active {
       background: $blue-500;
     }
   }

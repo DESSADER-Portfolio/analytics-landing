@@ -3,7 +3,10 @@ include slide/slide.pug
 mixin slider(props = {})
   - const rootClassName = "slider";
   - const className = props.class || null;
+  - const id = props.id || null;
   - const style = props.style || null;
+  - const navigation = props.navigation ?? true;
+  - const pagination = props.pagination ?? true;
   -
     const classes = [
       rootClassName,
@@ -11,14 +14,40 @@ mixin slider(props = {})
     ];
 
   div(
-    class = classes 
+    class = classes
     style = style
   )
-    div(class = "swiper")
-      div(class = "swiper-wrapper")
-        block
+    div(
+      class = [
+        `${rootClassName}__main`,
+        "display-flex", 
+        "align-items-center",
+        "mb-24"
+      ]
+    )
+      if navigation
+        +button({
+          class: [`${rootClassName}__nav-button`, "button-prev"],
+          size: "md",
+          icon: "chevron-left"
+        })
 
-    +button({class: ["nav-button", "button-prev"], icon: "chevron-left"})
-    +button({class: ["nav-button", "button-next"], icon: "chevron-right"})
+      div(class = [`${rootClassName}__track`, "swiper"] id = id)
+        div(class = "swiper-wrapper")
+          block
 
-    div(class = ["swiper-pagination", "display-flex", "justify-content-center"])
+      if navigation
+        +button({
+          class: [`${rootClassName}__nav-button`, "button-next"],
+          size: "md",
+          icon: "chevron-right"
+        })
+
+    if pagination
+      div(
+        class = [
+          `${rootClassName}__pagination`,
+          "display-flex", 
+          "justify-content-center"
+        ]
+      )
