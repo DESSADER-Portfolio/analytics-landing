@@ -22,32 +22,47 @@ mixin slider(props = {})
         `${rootClassName}__main`,
         "display-flex", 
         "align-items-center",
-        "mb-24"
+        "mb-64",
+        "px-80",
+        "sm:flex-direction-column",
+        "sm:px-0",
+        "sm:mb-44"
       ]
     )
-      if navigation
-        +button({
-          class: [`${rootClassName}__nav-button`, "button-prev"],
-          size: "md",
-          icon: "chevron-left"
-        })
-
-      div(class = [`${rootClassName}__track`, "swiper"] id = id)
+      div(
+        class = [
+          `${rootClassName}__track`, 
+          "swiper", 
+          "sm:mb-24"
+        ] 
+        id = id
+      )
         div(class = "swiper-wrapper")
           block
 
       if navigation
-        +button({
-          class: [`${rootClassName}__nav-button`, "button-next"],
-          size: "md",
-          icon: "chevron-right"
+        +stack({
+          class: [
+            `${rootClassName}__navigation`,
+            "sm:justify-content-center"
+          ]
         })
+          +button({
+            class: [`${rootClassName}__nav-button`, "button-prev"],
+            size: "md",
+            icon: "chevron-left"
+          })
+
+          +button({
+            class: [`${rootClassName}__nav-button`, "button-next"],
+            size: "md",
+            icon: "chevron-right"
+          })
 
     if pagination
-      div(
-        class = [
+      +stack({
+        class: [
           `${rootClassName}__pagination`,
-          "display-flex", 
           "justify-content-center"
         ]
-      )
+      })
