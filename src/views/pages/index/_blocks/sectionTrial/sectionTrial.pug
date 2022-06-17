@@ -1,0 +1,93 @@
+mixin sectionTrial(props = {})
+  - const rootClassName = "section-trial";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const description = props.description || "";
+  - const inputPlaceholder = props.inputPlaceholder || "";
+  - const buttonLabel = props.buttonLabel || "";
+  - const items = props.items || [];
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "text-align-center",
+      "mt-32",
+      "mb-96",
+      "sm:mb-32"
+    ];
+
+  // Start: [Section: trial] 
+  section(
+    class = classes 
+    style = style
+  )
+    
+    // Start: [Container] 
+    +container()
+
+      // Start: [Stack] 
+      +stack({
+        class: [
+          `${rootClassName}__wrapper`,
+          "flex-direction-column",
+          "py-64",
+          "px-24",
+          "sm:py-24"
+        ]
+      })
+
+        // Start: [Grid] 
+        +grid({class: "justify-content-center"})
+          
+          // Start: [Column 5] 
+          +column({
+            class: [
+              "column-5",
+              "lg:column-10", 
+              "sm:column-12"
+            ]
+          })
+            +sectionHeading({
+              class: "mb-24",
+              heading: heading,
+              description: description,
+              color: "light"
+            })
+            +stack({
+              class: [
+                `${rootClassName}__form`,
+                "mb-24",
+                "sm:flex-direction-column"
+              ]
+            })
+              +textField({
+                class: `${rootClassName}__input`, 
+                placeholder: inputPlaceholder
+              })
+              +button({
+                class: `${rootClassName}__button`, 
+                label: buttonLabel,
+                size: "md",
+                variant: "primary-black"
+              })
+            +stack({
+              class: [
+                `${rootClassName}__items`, 
+                "justify-content-center",
+                "sm:flex-direction-column"
+              ]
+            })
+              each item in items
+                +stack({class: ["trial-item", "align-items-center"]})
+                  +icon({
+                    class: ["trial-item__icon", "mr-12"], 
+                    icon: "check"
+                  })
+                  +typography({variant: "body-small"})
+                    | #{item}
+          // End: [Column 5] 
+        // End: [Grid] 
+      // End: [Stack] 
+    // End: [Container] 
+  // End: [Section: trial] 

@@ -1,0 +1,41 @@
+$root-class: "section-trial";
+
+.#{$root-class} {
+  color: $neutral-white;
+
+  &__wrapper {
+    border-radius: 10px;
+    background: $blue-500;
+  }
+
+  &__form {
+    gap: 16px;
+  }
+
+  &__input {
+    width: 100%;
+    border-color: transparent;
+  }
+
+  &__button {
+    flex: 0 0 auto;
+  }
+
+  &__items {
+    gap: 20px;
+  }
+
+  .trial-item {
+    &__icon {
+      width: 20px;
+      height: 20px;
+      fill: $neutral-white;
+    }
+  }
+
+  @include breakpoint(sm) {
+    &__wrapper {
+      margin: 0 -20px;
+    }
+  }
+}

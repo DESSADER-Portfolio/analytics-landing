@@ -100,6 +100,17 @@
           }
         }
       ]
+    },
+    "trial": {
+      "heading": ["Start a 7-day free trial"],
+      "description": "Product analytics to help you convert, acquire and retain more users",
+      "inputPlaceholder": "Enter you email",
+      "buttonLabel": "Try for free",
+      "items": [
+        "7-day free trial",
+        "No credit card required",
+        "Cancel anytime"
+      ]
     }
   }
 }
