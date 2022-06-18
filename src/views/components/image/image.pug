@@ -1,0 +1,22 @@
+mixin image(props = {})
+  - const rootClassName = "image";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const width = props.width || "auto";
+  - const height = props.height || "auto";
+  - const alt = props.alt || "Image";
+  - const src = props.src || "";
+  -
+    const classes = [
+      rootClassName,
+      className
+    ];
+
+  img(
+    class = classes 
+    style = style
+    width = width
+    height = height
+    alt = alt
+    src = require(`../../../assets/images/${src}`)
+  )
