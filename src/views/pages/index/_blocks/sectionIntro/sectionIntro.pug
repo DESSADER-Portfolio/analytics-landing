@@ -7,6 +7,7 @@ mixin sectionIntro(props = {})
   - const inputPlaceholder = props.inputPlaceholder || "";
   - const buttonLabel = props.buttonLabel || "";
   - const label = props.label || "";
+  - const partners = props.partners || [];
   -
     const classes = [
       rootClassName,
@@ -25,7 +26,7 @@ mixin sectionIntro(props = {})
     +container()
 
       // Start: [Grid] 
-      +grid({class: "align-items-center"})
+      +grid({class: ["align-items-center", "justify-content-space-between"]})
 
         // Start: [Column 5] 
         +column({class: ["column-5", "lg:column-6", "md:column-12"]})
@@ -53,10 +54,15 @@ mixin sectionIntro(props = {})
           // End: [Stack] 
         // End: [Column 5]
 
-        // Start: [Column 7] 
-        +column({class: ["column-7", "lg:column-6", "md:display-none"]})
-          div(class = `${rootClassName}__illustration`)
-        // End: [Column 7]  
+        // Start: [Column 6] 
+        +column({class: ["column-6", "lg:column-6", "md:display-none"]})
+          +image({
+            width: "100%",
+            height: "auto",
+            src: "illustration-1.svg",
+            alt: "Intro section illustration"
+          })
+        // End: [Column 6]  
       // End: [Grid] 
     // End: [Container]
 
@@ -74,31 +80,14 @@ mixin sectionIntro(props = {})
           "sm:py-24"
         ]
       })
-        div(
-          class = "company-item"
-          style = `background-image: url(${require(`../../../assets/images/logo-airbnb.svg`)})`
-        )
-        div(
-          class = "company-item"
-          style = `background-image: url(${require(`../../../assets/images/logo-rakuten.svg`)})`
-        )
-        div(
-          class = "company-item"
-          style = `background-image: url(${require(`../../../assets/images/logo-google.svg`)})`
-        )
-        div(
-          class = "company-item"
-          style = `background-image: url(${require(`../../../assets/images/logo-invision.svg`)})`
-        )
-        div(
-          class = "company-item"
-          style = `background-image: url(${require(`../../../assets/images/logo-stripe.svg`)})`
-        )
-        div(
-          class = "company-item"
-          style = `background-image: url(${require(`../../../assets/images/logo-zendesk.svg`)})`
-        )
-      
+        each item in partners
+          +stack({class: ["justify-content-center", "align-items-center"]})
+            +image({
+              width: "100%",
+              height: "auto",
+              src: `logo-${item}.svg`,
+              alt: `${item} company logo`
+            })
       // End: [Stack]  
     // End: [Container] 
   // End: [Section: intro] 

@@ -10,7 +10,15 @@
       "description": "With analytics, you can get answers about what happened, why, and how to improve your results",
       "inputPlaceholder": "Enter email",
       "buttonLabel": "Try for free",
-      "label": "Free of charge for 7 days. Without a subscription"
+      "label": "Free of charge for 7 days. Without a subscription",
+      "partners": [
+        "airbnb",
+        "rakuten",
+        "google",
+        "invision",
+        "stripe",
+        "zendesk"
+      ]
     },
     "analytics": {
       "heading": ["Analytics"],
