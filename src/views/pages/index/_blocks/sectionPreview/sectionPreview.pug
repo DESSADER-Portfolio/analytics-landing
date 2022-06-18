@@ -31,10 +31,13 @@ mixin sectionPreview(props = {})
       // End: [Heading]   
 
       // Start: [Image] 
-      img(
-        class = [`${rootClassName}__image`, "mb-44"] 
-        src = require("../../../assets/images/dashboard.png")
-      )
+      +image({
+        class: "mb-32",
+        width: "100%",
+        height: "auto",
+        src: "dashboard.webp",
+        alt: "Dashboard preview"
+      })
       // End: [Image]
 
       // Start: [Grid] 
