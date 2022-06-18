@@ -79,11 +79,14 @@ mixin sectionAnalysis(props = {})
 
         // Start: [Column 6] 
         +column({class: ["column-6", "lg:column-12"]})
-          img(
-            class = [`${rootClassName}__image`, "lg:mb-24"]
-            src = require("../../../assets/images/chart.png")
-          )
+          +image({
+            class: "lg:mb-24",
+            width: "100%",
+            height: "auto",
+            src: "chart.webp",
+            alt: "Chart preview"
+          })
         // End: [Column 6] 
       // End: [Grid] 
     // End: [Container] 
-  // End: [Section: analysis] 
+  // End: [Section: analysis]
