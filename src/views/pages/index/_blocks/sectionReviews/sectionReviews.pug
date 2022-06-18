@@ -38,9 +38,12 @@ mixin sectionReviews(props = {})
               ]
             })
               div(class = ["review-item__photo", "lg:mb-24"])
-                img(
-                  src = require(`../../../assets/images/user-${item.author.photoId}.png`)
-                )
+                +image({
+                  width: "100%",
+                  height: "auto",
+                  src: `user-${item.author.photoId}.webp`,
+                  alt: `${item.author.name} photo`
+                })
               +stack({
                 class: [
                   "review-item__content", 

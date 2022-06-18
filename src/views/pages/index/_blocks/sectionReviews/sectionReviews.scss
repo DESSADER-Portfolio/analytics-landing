@@ -5,11 +5,6 @@ $root-class: "section-reviews";
     &__photo {
       flex: 0 0 auto;
       width: 480px;
-
-      img {
-        display: block;
-        width: 100%;
-      }
     }
 
     &__position {
