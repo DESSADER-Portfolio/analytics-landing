@@ -28,10 +28,12 @@ mixin sectionFeatures(props = {})
 
         // Start: [Column 5] 
         +column({class: ["column-5", "md:display-none"]})
-          img(
-            class = `${rootClassName}__image`
-            src = require("../../../assets/images/illustration-2.svg")
-          )
+          +image({
+            width: "100%",
+            height: "auto",
+            src: "illustration-2.svg",
+            alt: "Features section illustration"
+          })
         // End: [Column 5]
 
         // Start: [Column 6] 
