@@ -1,0 +1,51 @@
+$root-class: "footer";
+
+.#{$root-class} {
+  background: $black-500;
+  color: $neutral-white;
+
+  &__nav {
+    gap: 30px;
+  }
+
+  &__nav-link {
+    color: $black-200;
+    font-size: 18px;
+    line-height: 34px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid $black-400;
+  }
+
+  &__social-links {
+    gap: 6px;
+  }
+
+  &__social-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    background: $black-400;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      fill: $neutral-white;
+    }
+
+    &:hover {
+      background: $blue-500;
+    }
+  }
+
+  &__copyright,
+  &__copyright a {
+    color: $black-200;
+  }
+}

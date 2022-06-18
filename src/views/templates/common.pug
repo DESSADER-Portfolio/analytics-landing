@@ -45,3 +45,11 @@ html(lang="ru")
       block content
       
     // End: [Main]
+
+    // Start: [Footer] 
+    +footer({
+      menuGroups: appData.navigation.footer.menu,
+      social: appData.navigation.footer.social,
+      copyright: appData.navigation.footer.copyright
+    })
+    // End: [Footer] 
