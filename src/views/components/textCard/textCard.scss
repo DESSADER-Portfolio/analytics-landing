@@ -1,0 +1,11 @@
+$root-class: "text-card";
+
+.#{$root-class} {
+  border-radius: 10px;
+}
+
+@include breakpoint(sm) {
+  .#{$root-class}\:sm-outline {
+    border: 1px solid $black-050;
+  }
+}
