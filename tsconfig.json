@@ -6,9 +6,11 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "paths": {
-      "@components/js": ["./src/views/components/components.ts"] 
+      "@src/*": ["./src/*"],
+      "@components/js": ["./src/views/components/components.ts"]
     },
   },
   "include": ["./src/**/*.ts"],
