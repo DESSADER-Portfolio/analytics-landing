@@ -35,18 +35,16 @@ mixin sectionAnalytics(props = {})
           // Start: [Items] 
           div(class = `${rootClassName}__items`)
             each item in items
-              +stack({
+              +textCard({
                 class: [
                   "analytics-item", 
-                  "flex-direction-column", 
                   "sm:px-24", 
                   "sm:py-20"
-                ]
+                ],
+                title: item.title, 
+                description: item.description,
+                smOutline: true
               })
-                +typography({class: "mb-8", variant: "body-large", weight: "medium"})
-                  | #{item.title}
-                +typography({variant: "body-default"})
-                  | #{item.description}
           // End: [Items] 
         // End: [Column 8] 
       // End: [Grid]  

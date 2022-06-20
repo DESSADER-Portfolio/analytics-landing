@@ -5,8 +5,6 @@ $root-class: "section-preview";
   color: $neutral-white;
 
   .preview-item {
-    border-radius: 10px;
-
     &:hover {
       background: $black-400;
     }

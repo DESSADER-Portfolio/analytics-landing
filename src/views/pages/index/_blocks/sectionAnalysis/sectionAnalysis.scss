@@ -7,12 +7,7 @@ $root-class: "section-analysis";
 
   @include breakpoint(sm) {
     &__items {
-      gap: 12px;
-    }
-
-    .analysis-item {
-      border: 1px solid $black-050;
-      border-radius: 10px;
+      gap: 20px;
     }
   }
 }

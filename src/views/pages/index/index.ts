@@ -36,7 +36,7 @@ function runAnimation(): void {
   // Section Security
   scroll.reveal(".section-security .section-heading__heading");
   scroll.reveal(".section-security .security-item", { interval: 200, delay: 100 });
-  scroll.reveal(".section-security .security-item__dot", { 
+  scroll.reveal(".section-security .item-dot", { 
     scale: 0,
     interval: 300, 
     delay: 100,

@@ -32,28 +32,21 @@ mixin sectionSecurity(props = {})
         each item in items
           // Start: [Column 3] 
           +column({class: ["column-3", "md:column-6", "sm:column-12"]})
-            // Start: [Stack: security-item] 
-            +stack({
+            // Start: [Stack: security-item]
+            div(class = ["item-dot", "mb-24", "md:display-none"])
+            +textCard({
               class: [
-                "security-item", 
-                "flex-direction-column",
+                "security-item",
                 "pr-28",
                 "xl:pr-0",
-                "md:mb-32",
-                "sm:px-24", 
-                "sm:py-16", 
-                "sm:mb-12"
-              ]
+                "md:mb-20",
+                "sm:px-24",
+                "sm:py-20"
+              ],
+              title: item.title,
+              description: item.description,
+              smOutline: true
             })
-              div(class = ["security-item__dot", "mb-24", "md:display-none"])
-              +typography({
-                class: "mb-8",
-                variant: "body-large", 
-                weight: "medium"
-              })
-                | #{item.title}
-              +typography({variant: "body-default"})
-                | #{item.description}
             // End: [Stack: security-item] 
           // End: [Column 3] 
       // End: [Grid] 

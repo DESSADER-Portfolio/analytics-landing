@@ -56,24 +56,17 @@ mixin sectionAnalysis(props = {})
           })
             
             each item in items
-              // Start: [analysis-item] 
-              +stack({
+              // Start: [analysis-item]
+              +textCard({
                 class: [
-                  "analysis-item", 
-                  "flex-direction-column", 
-                  "sm:px-24", 
+                  "analysis-item",
+                  "sm:px-24",
                   "sm:py-20"
-                ]
-              })
-                +typography({
-                  class: "mb-8", 
-                  variant: "body-large", 
-                  weight: "medium"
-                })
-                  | #{item.title}
-                +typography({variant: "body-default"})
-                  | #{item.description}
-              // End: [analysis-item] 
+                ],
+                title: item.title,
+                description: item.description,
+                smOutline: true
+              }) 
           // End: [Stack: items] 
         // End: [Column 6]
 
