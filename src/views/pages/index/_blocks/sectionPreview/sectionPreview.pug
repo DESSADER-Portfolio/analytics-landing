@@ -32,7 +32,7 @@ mixin sectionPreview(props = {})
 
       // Start: [Image] 
       +image({
-        class: "mb-32",
+        class: [`${rootClassName}__image`, "mb-32"],
         width: "100%",
         height: "auto",
         src: "dashboard.webp",

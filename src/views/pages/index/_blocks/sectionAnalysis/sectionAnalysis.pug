@@ -40,7 +40,7 @@ mixin sectionAnalysis(props = {})
             description: description
           })
           +button({
-            class: ["mb-44", "sm:mb-24"],
+            class: [`${rootClassName}__button`, "mb-44", "sm:mb-24"],
             label: buttonLabel, 
             variant: "primary-blue",
             size: "md",
@@ -80,7 +80,7 @@ mixin sectionAnalysis(props = {})
         // Start: [Column 6] 
         +column({class: ["column-6", "lg:column-12"]})
           +image({
-            class: "lg:mb-24",
+            class: [`${rootClassName}__image`, "lg:mb-24"],
             width: "100%",
             height: "auto",
             src: "chart.webp",

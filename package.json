@@ -23,6 +23,7 @@
     "@babel/core": "^7.17.9",
     "@babel/plugin-transform-classes": "^7.16.7",
     "@babel/preset-env": "^7.16.11",
+    "@types/scrollreveal": "^0.0.8",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
     "autoprefixer": "^10.4.4",
@@ -66,6 +67,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "scrollreveal": "^4.0.9",
     "swiper": "^8.2.4"
   }
 }

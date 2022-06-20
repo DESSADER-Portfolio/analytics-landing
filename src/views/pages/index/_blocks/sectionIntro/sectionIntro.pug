@@ -31,14 +31,14 @@ mixin sectionIntro(props = {})
         // Start: [Column 5] 
         +column({class: ["column-5", "lg:column-6", "md:column-12"]})
           +typography({
-            class: ["mb-32", "sm:mb-24"],
+            class: [`${rootClassName}__heading`, "mb-32", "sm:mb-24"],
             as: "h1",
             variant: "h1"
           })
             each str in heading
               span
                 span #{str}
-          +typography({class: ["mb-24", "sm:md-16"], variant: "body-large"})
+          +typography({class: [`${rootClassName}__description`, "mb-24", "sm:md-16"], variant: "body-large"})
             | #{description}
           // Start: [Stack] 
           +stack({class: [`${rootClassName}__form`, "mb-24", "sm:flex-direction-column"]})
@@ -57,6 +57,7 @@ mixin sectionIntro(props = {})
         // Start: [Column 6] 
         +column({class: ["column-6", "lg:column-6", "md:display-none"]})
           +image({
+            class: `${rootClassName}__image`,
             width: "100%",
             height: "auto",
             src: "illustration-1.svg",
@@ -81,7 +82,7 @@ mixin sectionIntro(props = {})
         ]
       })
         each item in partners
-          +stack({class: ["justify-content-center", "align-items-center"]})
+          +stack({class: ["partner-item","justify-content-center", "align-items-center"]})
             +image({
               width: "100%",
               height: "auto",
