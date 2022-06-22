@@ -33,6 +33,7 @@ html(lang="ru")
 
     // Start: [navbar]
     +navbar({
+      class: `${rootClassName}-navbar`,
       menuItems: appData.navigation.header.menu,
       extraItems: appData.navigation.header.extra
     })
@@ -48,6 +49,7 @@ html(lang="ru")
 
     // Start: [footer] 
     +footer({
+      class: `${rootClassName}-footer`,
       menuGroups: appData.navigation.footer.menu,
       social: appData.navigation.footer.social,
       copyright: appData.navigation.footer.copyright
