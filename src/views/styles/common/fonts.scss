@@ -35,7 +35,7 @@
 
 @include font-face(
   $name: "Inter",
-  $path: "#{$font-root-path}/Inter/Inter-Semibold",
+  $path: "#{$font-root-path}/Inter/Inter-SemiBold",
   $formats: (
     ttf: (ext: "ttf", name: "truetype"),
     woff: (ext: "woff", name: "woff"),
