@@ -1,5 +1,7 @@
-import { Navbar } from "@components/js";
+import { Navbar, Preloader } from "@components/js";
 import { scroll } from "@src/scripts/scrollReveal";
+
+const preloader = new Preloader(".preloader");
 
 function runAnimation(): void {
   scroll.reveal(".navbar", { origin: "top", distance: "0px" });
@@ -12,5 +14,8 @@ new Navbar(".menu", {
 });
 
 window.addEventListener("load", () => {
-  runAnimation();
+  preloader.hide(() => {
+    runAnimation();
+    document.body.classList.remove("no-scroll");
+  });
 });
