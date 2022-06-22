@@ -12,24 +12,34 @@ mixin sectionReviews(props = {})
       "sm:py-32"
     ];
 
-  // Start: [Section: reviews] 
   section(
     class = classes 
     style = style
   )
     
-    // Start: [Container] 
+    // Start: [container] 
     +container()
+      
+      // Start: [section-heading] 
       +sectionHeading({
-        class: ["text-align-center", "mb-44"], 
+        class: [
+          "text-align-center",
+          "mb-44"
+        ], 
         heading: heading
-      })
+      }) 
+      // End: [section-heading] 
 
-      // Start: [Slider] 
-      +slider({id: "reviews-slider", class: "reviews-slider"})
+      // Start: [reviews-slider] 
+      +slider({
+        id: "reviews-slider", 
+        class: "reviews-slider"
+      })
         each item in items
+          // Start: [slide] 
           +slide()
-            // Start: [Stack: review-item] 
+
+            // Start: [stack/review-item] 
             +stack({
               class: [
                 "review-item", 
@@ -37,13 +47,23 @@ mixin sectionReviews(props = {})
                 "lg:flex-direction-column"
               ]
             })
-              div(class = ["review-item__photo", "lg:mb-24"])
+
+              // Start: [review-item__photo] 
+              div(
+                class = [
+                  "review-item__photo",
+                  "lg:mb-24"
+                ]
+              )
                 +image({
                   width: "100%",
                   height: "auto",
                   src: `user-${item.author.photoId}.webp`,
                   alt: `${item.author.name} photo`
                 })
+              // End: [review-item__photo] 
+
+              // Start: [review-item__content] 
               +stack({
                 class: [
                   "review-item__content", 
@@ -68,8 +88,9 @@ mixin sectionReviews(props = {})
                 })
                   | #{item.author.position}
                 div()
-                  img(src = require(`../../../assets/images/logo-${item.author.company}.svg`) style = "display: block")
-            // End: [Stack: review-item] 
-      // End: [Slider] 
-    // End: [Container] 
-  // End: [Section: reviews] 
+                  img(src = require(`../../../assets/images/logo-${item.author.company}.svg`))
+              // End: [review-item__content]
+            // End: [stack/review-item]
+          // End: [slide] 
+      // End: [reviews-slider]
+    // End: [container]

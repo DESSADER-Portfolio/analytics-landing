@@ -14,20 +14,29 @@ mixin sectionFeatures(props = {})
       "sm:py-32"
     ];
 
-  // Start: [Section: features] 
   section(
     class = classes 
     style = style
   )
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
 
-      // Start: [Grid] 
-      +grid({class: ["align-items-center", "justify-content-space-between"]})
+      // Start: [grid] 
+      +grid({
+        class: [
+          "align-items-center",
+          "justify-content-space-between"
+        ]
+      })
 
-        // Start: [Column 5] 
-        +column({class: ["column-5", "md:display-none"]})
+        // Start: [column-5] 
+        +column({
+          class: [
+            "column-5",
+            "md:display-none"
+          ]
+        })
           +image({
             class: `${rootClassName}__image`,
             width: "100%",
@@ -35,27 +44,52 @@ mixin sectionFeatures(props = {})
             src: "illustration-2.svg",
             alt: "Features section illustration"
           })
-        // End: [Column 5]
+        // End: [column-5]
 
-        // Start: [Column 6] 
-        +column({class: ["column-6", "md:column-12"]})
+        // Start: [column-6] 
+        +column({
+          class: [
+            "column-6",
+            "md:column-12"
+          ]
+        })
+          
+          // Start: [section-heading] 
           +sectionHeading({
             class: "mb-24",
             heading: heading,
             description: description
           })
+          // End: [section-heading] 
 
-          // Start: [Items] 
-          div(class = [`${rootClassName}__items`, "mb-24"])
+          // Start: [section-features__items] 
+          div(
+            class = [
+              `${rootClassName}__items`,
+              "mb-24"
+            ]
+          )
             each item in items
-              // Start: [Stack: feature-item] 
-              +stack({class: ["feature-item", "align-items-center"]})
-                +icon({class: ["mr-12", "feature-item__icon"], icon: "check"})
+              // Start: [stack/feature-item] 
+              +stack({
+                class: [
+                  "feature-item",
+                  "align-items-center"
+                ]
+              })
+                +icon({
+                  class: [
+                    "mr-12",
+                    "feature-item__icon"
+                  ], 
+                  icon: "check"
+                })
                 +typography({variant: "body-default"})
                   | #{item}
-              // End: [Stack: feature-item] 
-          // End: [Items]
+              // End: [stack/feature-item] 
+          // End: [section-features__items]
 
+          // Start: [button] 
           +button({
             class: `${rootClassName}__button`,
             label: buttonLabel,
@@ -63,7 +97,7 @@ mixin sectionFeatures(props = {})
             icon: "arrow-right",
             size: "md",
           })
-        // End: [Column 6]
-      // End: [Grid] 
-    // End: [Container] 
-  // End: [Section: features] 
+          // End: [button] 
+        // End: [column-6]
+      // End: [grid] 
+    // End: [container] 

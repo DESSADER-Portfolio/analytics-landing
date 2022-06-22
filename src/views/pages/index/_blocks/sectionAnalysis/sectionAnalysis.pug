@@ -14,16 +14,15 @@ mixin sectionAnalysis(props = {})
       "sm:py-32"
     ];
 
-  // Start: [Section: analysis] 
   section(
     class = classes 
     style = style
   )
-    
-    // Start: [Container] 
+
+    // Start: [container] 
     +container()
 
-      // Start: [Grid] 
+      // Start: [grid] 
       +grid({
         class: [
           "align-items-center", 
@@ -32,31 +31,46 @@ mixin sectionAnalysis(props = {})
         ]
       })
 
-        // Start: [Column 6] 
-        +column({class: ["column-6", "lg:column-8", "md:column-12"]}) 
+        // Start: [column-6] 
+        +column({
+          class: [
+            "column-6",
+            "lg:column-8",
+            "md:column-12"
+          ]
+        }) 
+          
+          // Start: [section-heading] 
           +sectionHeading({
             class: "mb-24",
             heading: heading,
             description: description
           })
+          // End: [section-heading] 
+
+          // Start: [button] 
           +button({
-            class: [`${rootClassName}__button`, "mb-44", "sm:mb-24"],
+            class: [
+              `${rootClassName}__button`,
+              "mb-44",
+              "sm:mb-24"
+            ],
             label: buttonLabel, 
             variant: "primary-blue",
             size: "md",
             icon: "arrow-right"
           })
+          // End: [button] 
           
-          // Start: [Stack: items] 
+          // Start: [stack/section-analysis__items] 
           +stack({
             class: [
               `${rootClassName}__items`, 
               "sm:flex-direction-column"
             ]
           })
-            
             each item in items
-              // Start: [analysis-item]
+              // Start: [text-card/analysis-item]
               +textCard({
                 class: [
                   "analysis-item",
@@ -67,11 +81,17 @@ mixin sectionAnalysis(props = {})
                 description: item.description,
                 smOutline: true
               }) 
-          // End: [Stack: items] 
-        // End: [Column 6]
+              // End: [text-card/analysis-item]
+          // End: [stack/section-analysis__items] 
+        // End: [column-6]
 
-        // Start: [Column 6] 
-        +column({class: ["column-6", "lg:column-12"]})
+        // Start: [column-6] 
+        +column({
+          class: [
+            "column-6",
+            "lg:column-12"
+          ]
+        })
           +image({
             class: [`${rootClassName}__image`, "lg:mb-24"],
             width: "100%",
@@ -79,7 +99,6 @@ mixin sectionAnalysis(props = {})
             src: "chart.webp",
             alt: "Chart preview"
           })
-        // End: [Column 6] 
-      // End: [Grid] 
-    // End: [Container] 
-  // End: [Section: analysis]
+        // End: [column-6] 
+      // End: [grid] 
+    // End: [container] 

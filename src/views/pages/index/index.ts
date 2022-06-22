@@ -2,7 +2,7 @@ import Swiper, { Navigation, Pagination } from "swiper";
 import { scroll } from "@src/scripts/scrollReveal";
 
 function runAnimation(): void {
-  // Section Intro
+  // section-intro
   scroll.reveal(".section-intro__heading");
   scroll.reveal(`
     .section-intro__description,
@@ -15,16 +15,16 @@ function runAnimation(): void {
     .section-intro .partner-item
   `, { interval: 100 });
 
-  // Section Analytics
+  // section-analytics
   scroll.reveal(".section-analytics .section-heading__heading");
   scroll.reveal(".section-analytics .analytics-item", { interval: 200, delay: 300 });
 
-  // Section Preview
+  // section-preview
   scroll.reveal(".section-preview .section-heading__heading");
   scroll.reveal(".section-preview__image", { scale: 0.95, delay: 300 });
   scroll.reveal(".section-preview .preview-item", { interval: 200, delay: 300 });
 
-  // Section Analysis
+  // section-analysis
   scroll.reveal(`
     .section-analysis .section-heading__heading,
     .section-analysis .section-heading__description,
@@ -33,7 +33,7 @@ function runAnimation(): void {
   `, { interval: 200 });
   scroll.reveal(".section-analysis__image", { distance: "0px", scale: 0.95 });
 
-  // Section Security
+  // section-security
   scroll.reveal(".section-security .section-heading__heading");
   scroll.reveal(".section-security .security-item", { interval: 200, delay: 100 });
   scroll.reveal(".section-security .item-dot", { 
@@ -44,7 +44,7 @@ function runAnimation(): void {
     origin: "left"
   });
 
-  // Section Features
+  // section-features
   scroll.reveal(`
     .section-features .section-heading__heading,
     .section-features .section-heading__description,
@@ -53,11 +53,11 @@ function runAnimation(): void {
   scroll.reveal(".section-features .feature-item", { interval: 100 });
   scroll.reveal(".section-features__image", { distance: "0px", scale: 0.95 });
 
-  // Section Reviews
+  // section-reviews
   scroll.reveal(".section-reviews .section-heading__heading");
   scroll.reveal(".section-reviews .reviews-slider", { delay: 300 });
 
-  // Section Trial
+  // section-trial
   scroll.reveal(`
     .section-trial,
     .section-trial .section-heading__heading,

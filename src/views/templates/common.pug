@@ -31,27 +31,25 @@ html(lang="ru")
 
     +preloader({class: "display-flex"})
 
-    // Start: [Navbar]
+    // Start: [navbar]
     +navbar({
       menuItems: appData.navigation.header.menu,
       extraItems: appData.navigation.header.extra
     })
-
-    // End: [Navbar]
+    // End: [navbar]
   
-    // Start: [Main]
+    // Start: [main]
     main(class = [
       `${pageClass}`,
       `${rootClassName}-content`
     ])
       block content
-      
-    // End: [Main]
+    // End: [main]
 
-    // Start: [Footer] 
+    // Start: [footer] 
     +footer({
       menuGroups: appData.navigation.footer.menu,
       social: appData.navigation.footer.social,
       copyright: appData.navigation.footer.copyright
     })
-    // End: [Footer] 
+    // End: [footer] 

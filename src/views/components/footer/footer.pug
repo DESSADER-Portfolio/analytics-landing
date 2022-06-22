@@ -17,19 +17,29 @@ mixin footer(props = {})
     class = classes
     style = style
   )
-    // Start: [Container] 
+    // Start: [container] 
     +container()
 
-      // Start: [Grid] 
+      // Start: [grid] 
       +grid({class: "justify-content-space-between"})
 
-        // Start: [Column 2] 
+        // Start: [column-2] 
         +column({class: "column-2"})
-          +logo({class: "md:mb-24", variant: "light"})
-        // End: [Column 2] 
+          +logo({
+            class: "md:mb-24", 
+            variant: "light"
+          }) 
+        // End: [column-2] 
 
-        // Start: [Column 8] 
-        +column({class: ["column-8", "lg:column-10", "md:column-12"]})
+        // Start: [column-8] 
+        +column({
+          class: [
+            "column-8", 
+            "lg:column-10",
+            "md:column-12"
+          ]
+        })
+          // Start: [footer__nav] 
           nav(
             class = [
               `${rootClassName}__nav`, 
@@ -41,10 +51,13 @@ mixin footer(props = {})
             ]
           )
             each menu, groupTitle in menuGroups
-              // Start: [nav group] 
+              // Start: [footer__nav-group] 
               ul(class = `${rootClassName}__nav-group`)
                 +typography({
-                  class: [`${rootClassName}__nav-title`, "mb-8"],
+                  class: [
+                    `${rootClassName}__nav-title`,
+                    "mb-8"
+                  ],
                   variant: "body-large",
                   weight: "semibold"
                 }) #{groupTitle}
@@ -55,13 +68,15 @@ mixin footer(props = {})
                       href = item.link
                     ) 
                       | #{item.label}
-              // End: [nav group]
-        // End: [Column 8] 
-      // End: [Grid] 
-    // End: [Container]
+              // End: [footer__nav-group]
+          // End: [footer__nav] 
+        // End: [column-8] 
+      // End: [grid] 
+    // End: [container]
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
+      // Start: [stack/footer__bottom] 
       +stack({
         class: [
           `${rootClassName}__bottom`,
@@ -73,11 +88,16 @@ mixin footer(props = {})
         ]
       })
         +typography({
-          class: [`${rootClassName}__copyright`, "sm:mb-24"], 
+          class: [
+            `${rootClassName}__copyright`, 
+            "sm:mb-24"
+          ], 
           variant: "body-default"
         })
           | !{copyright}
-        +stack({class: [`${rootClassName}__social-links`]})
+
+        // Start: [stack/footer__social-links] 
+        +stack({class: `${rootClassName}__social-links`})
           each item in social
             a(
               class = [
@@ -89,4 +109,6 @@ mixin footer(props = {})
               href = item.link
             )
               +icon({icon: item.title})
-    // End: [Container] 
+        // End: [stack/social__links] 
+      // End: [stack/footer__bottom] 
+    // End: [container]

@@ -17,10 +17,10 @@ mixin slider(props = {})
     class = classes
     style = style
   )
-    div(
-      class = [
+    // Start: [stack/slider__main] 
+    +stack({
+      class: [
         `${rootClassName}__main`,
-        "display-flex", 
         "align-items-center",
         "mb-64",
         "px-80",
@@ -28,7 +28,8 @@ mixin slider(props = {})
         "sm:px-0",
         "sm:mb-44"
       ]
-    )
+    })
+      // Start: [slider__track] 
       div(
         class = [
           `${rootClassName}__track`, 
@@ -39,7 +40,9 @@ mixin slider(props = {})
       )
         div(class = "swiper-wrapper")
           block
+      // End: [slider__track] 
 
+      // Start: [stack/slider__navigation] 
       if navigation
         +stack({
           class: [
@@ -48,17 +51,26 @@ mixin slider(props = {})
           ]
         })
           +button({
-            class: [`${rootClassName}__nav-button`, "button-prev"],
+            class: [
+              `${rootClassName}__nav-button`,
+              "button-prev"
+            ],
             size: "md",
             icon: "chevron-left"
           })
 
           +button({
-            class: [`${rootClassName}__nav-button`, "button-next"],
+            class: [
+              `${rootClassName}__nav-button`,
+              "button-next"
+            ],
             size: "md",
             icon: "chevron-right"
           })
+      // End: [stack/slider__navigation] 
+    // End: [stack/slider__main] 
 
+    // Start: [stack/slider__pagination] 
     if pagination
       +stack({
         class: [
@@ -66,3 +78,4 @@ mixin slider(props = {})
           "justify-content-center"
         ]
       })
+    // End: [stack/slider__pagination] 

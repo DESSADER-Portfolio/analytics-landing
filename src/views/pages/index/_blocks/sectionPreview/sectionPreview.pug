@@ -12,40 +12,46 @@ mixin sectionPreview(props = {})
       "sm:py-32"
     ];
 
-  // Start: [Section: preview] 
   section(
     class = classes 
     style = style
   )
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
 
-      // Start: [Heading] 
+      // Start: [section-heading] 
       +sectionHeading({
         class: "mb-32",
         heading: heading, 
         color: "light"
       })
 
-      // End: [Heading]   
+      // End: [section-heading]   
 
-      // Start: [Image] 
       +image({
-        class: [`${rootClassName}__image`, "mb-32"],
+        class: [
+          `${rootClassName}__image`,
+          "mb-32"
+        ],
         width: "100%",
         height: "auto",
         src: "dashboard.webp",
         alt: "Dashboard preview"
       })
-      // End: [Image]
 
-      // Start: [Grid] 
+      // Start: [grid] 
       +grid()
 
         each item in items
-          // Start: [Column 4] 
-          +column({class: ["column-4", "md:column-12"]})
+          // Start: [column-4] 
+          +column({
+            class: [
+              "column-4",
+              "md:column-12"
+            ]
+          })
+            // Start: [text-card/preview-item] 
             +textCard({
               class: [
                 "preview-item",
@@ -57,7 +63,7 @@ mixin sectionPreview(props = {})
               description: item.description,
               smOutline: true
             })
-          // End: [Column 4] 
-      // End: [Grid] 
-    // End: [Container] 
-  // End: [Section: preview] 
+            // End: [text-card/preview-item] 
+          // End: [column-4] 
+      // End: [grid] 
+    // End: [container] 

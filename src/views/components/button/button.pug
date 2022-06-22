@@ -31,4 +31,7 @@ mixin button(props = {})
     if label
       span(class = `${rootClassName}__text`) #{label}
     if icon
-      +icon({class: `${rootClassName}__icon`, icon: icon})
+      +icon({
+        class: `${rootClassName}__icon`, 
+        icon: icon
+      })

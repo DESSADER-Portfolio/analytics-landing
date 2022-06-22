@@ -16,46 +16,91 @@ mixin sectionIntro(props = {})
       "sm:pt-24"
     ];
 
-  // Start: [Section: intro]
   section(
     class = classes 
     style = style
   )
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
 
-      // Start: [Grid] 
-      +grid({class: ["align-items-center", "justify-content-space-between"]})
+      // Start: [grid] 
+      +grid({
+        class: [
+          "align-items-center",
+          "justify-content-space-between"
+        ]
+      })
 
-        // Start: [Column 5] 
-        +column({class: ["column-5", "lg:column-6", "md:column-12"]})
+        // Start: [column-5] 
+        +column({
+          class: [
+            "column-5",
+            "lg:column-6",
+            "md:column-12"
+          ]
+        })
           +typography({
-            class: [`${rootClassName}__heading`, "mb-32", "sm:mb-24"],
+            class: [
+              `${rootClassName}__heading`,
+              "mb-32",
+              "sm:mb-24"
+            ],
             as: "h1",
             variant: "h1"
           })
             each str in heading
-              span
-                span #{str}
-          +typography({class: [`${rootClassName}__description`, "mb-24", "sm:md-16"], variant: "body-large"})
+              span #{str}
+          +typography({
+            class: [
+              `${rootClassName}__description`,
+              "mb-24",
+              "sm:md-16"
+            ], 
+            variant: "body-large"
+          })
             | #{description}
-          // Start: [Stack] 
-          +stack({class: [`${rootClassName}__form`, "mb-24", "sm:flex-direction-column"]})
-            +textField({class: `${rootClassName}__text-field`, placeholder: inputPlaceholder})
+
+          // Start: [stack/section-intro__form] 
+          +stack({
+            class: [
+              `${rootClassName}__form`,
+              "mb-24",
+              "sm:flex-direction-column"
+            ]
+          })
+            // Start: [text-field/section-intro__text-field] 
+            +textField({
+              class: `${rootClassName}__text-field`, 
+              placeholder: inputPlaceholder
+            })
+            // End: [text-field/section-intro__text-field] 
+
+            // Start: [button/section-intro__button] 
             +button({
               class: `${rootClassName}__button`, 
               label: buttonLabel, 
-              variant: "primary-blue", 
+              variant: "primary-blue",
               size: "md"
             })
-          +typography({class: `${rootClassName}__label`, variant: "body-small"})
-            | #{label}
-          // End: [Stack] 
-        // End: [Column 5]
+            // End: [button/section-intro__button] 
+          // End: [stack/section-intro__form]
 
-        // Start: [Column 6] 
-        +column({class: ["column-6", "lg:column-6", "md:display-none"]})
+          +typography({
+            class: `${rootClassName}__label`,
+            variant: "body-small"
+          })
+            | #{label}
+        // End: [column-5]
+
+        // Start: [column-6] 
+        +column({
+          class: [
+            "column-6",
+            "lg:column-6",
+            "md:display-none"
+          ]
+        })
           +image({
             class: `${rootClassName}__image`,
             width: "100%",
@@ -63,14 +108,14 @@ mixin sectionIntro(props = {})
             src: "illustration-1.svg",
             alt: "Intro section illustration"
           })
-        // End: [Column 6]  
-      // End: [Grid] 
-    // End: [Container]
+        // End: [column-6]  
+      // End: [grid] 
+    // End: [container]
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
 
-      // Start: [Stack] 
+      // Start: [stack/section-intro__partners] 
       +stack({
         class: [
           `${rootClassName}__partners`,
@@ -82,13 +127,20 @@ mixin sectionIntro(props = {})
         ]
       })
         each item in partners
-          +stack({class: ["partner-item","justify-content-center", "align-items-center"]})
+          // Start: [stack/partner-item] 
+          +stack({
+            class: [
+              "partner-item",
+              "justify-content-center",
+              "align-items-center"
+            ]
+          })
             +image({
               width: "100%",
               height: "auto",
               src: `logo-${item}.svg`,
               alt: `${item} company logo`
             })
-      // End: [Stack]  
-    // End: [Container] 
-  // End: [Section: intro] 
+          // End: [stack/partner-item] 
+      // End: [stack/section-intro__partners]  
+    // End: [container] 

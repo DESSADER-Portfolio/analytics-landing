@@ -12,29 +12,48 @@ mixin sectionAnalytics(props = {})
       "sm:py-32"
     ];
 
-  // Start: [Section: analytics] 
   section(
     class = classes 
     style = style
   )
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
 
-      // Start: [Grid] 
+      // Start: [grid] 
       +grid()
 
-        // Start: [Column 4] 
-        +column({class: ["column-4", "lg:column-3", "md:column-12"]})
-          +sectionHeading({class: "md:mb-24", heading: heading})
-        // End: [Column 4] 
+        // Start: [column-4] 
+        +column({
+          class: [
+            "column-4",
+            "lg:column-3",
+            "md:column-12"
+          ]
+        })
+          
+          // Start: [section-heading] 
+          +sectionHeading({
+            class: "md:mb-24", 
+            heading: heading
+          })
+          // End: [section-heading] 
 
-        // Start: [Column 8] 
-        +column({class: ["column-8", "lg:column-9", "md:column-12"]})
+        // End: [column-4] 
 
-          // Start: [Items] 
+        // Start: [column-8] 
+        +column({
+          class: [
+            "column-8",
+            "lg:column-9",
+            "md:column-12"
+          ]
+        })
+
+          // Start: [section-analytics__items] 
           div(class = `${rootClassName}__items`)
             each item in items
+              // Start: [text-card/analytics-item] 
               +textCard({
                 class: [
                   "analytics-item", 
@@ -45,8 +64,8 @@ mixin sectionAnalytics(props = {})
                 description: item.description,
                 smOutline: true
               })
-          // End: [Items] 
-        // End: [Column 8] 
-      // End: [Grid]  
-    // End: [Container] 
-  // End: [Section: analytics] 
+              // End: [text-card/analytics-item] 
+          // End: [section-analytics__items] 
+        // End: [column-8] 
+      // End: [grid]  
+    // End: [container] 

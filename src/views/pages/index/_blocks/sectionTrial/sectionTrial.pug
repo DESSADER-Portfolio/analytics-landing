@@ -17,16 +17,15 @@ mixin sectionTrial(props = {})
       "sm:mb-32"
     ];
 
-  // Start: [Section: trial] 
   section(
-    class = classes 
+    class = classes
     style = style
   )
     
-    // Start: [Container] 
+    // Start: [container] 
     +container()
 
-      // Start: [Stack] 
+      // Start: [stack/section-trial__wrapper] 
       +stack({
         class: [
           `${rootClassName}__wrapper`,
@@ -37,10 +36,10 @@ mixin sectionTrial(props = {})
         ]
       })
 
-        // Start: [Grid] 
+        // Start: [grid] 
         +grid({class: "justify-content-center"})
           
-          // Start: [Column 5] 
+          // Start: [column-5] 
           +column({
             class: [
               "column-5",
@@ -48,12 +47,17 @@ mixin sectionTrial(props = {})
               "sm:column-12"
             ]
           })
+            
+            // Start: [section-heading] 
             +sectionHeading({
               class: "mb-24",
               heading: heading,
               description: description,
               color: "light"
             })
+            // End: [section-heading] 
+            
+            // Start: [stack/section-trial__form] 
             +stack({
               class: [
                 `${rootClassName}__form`,
@@ -61,16 +65,25 @@ mixin sectionTrial(props = {})
                 "sm:flex-direction-column"
               ]
             })
+
+              // Start: [text-field/section-trial__text-field] 
               +textField({
-                class: `${rootClassName}__input`, 
+                class: `${rootClassName}__text-field`, 
                 placeholder: inputPlaceholder
               })
+              // End: [text-field/section-trial__text-field] 
+              
+              // Start: [button/section-trial__button] 
               +button({
                 class: `${rootClassName}__button`, 
                 label: buttonLabel,
                 size: "md",
                 variant: "primary-black"
               })
+              // End: [button/section-trial__button] 
+            // End: [stack/section-trial__form] 
+            
+            // Start: [stack/section-trial__items] 
             +stack({
               class: [
                 `${rootClassName}__items`, 
@@ -79,15 +92,25 @@ mixin sectionTrial(props = {})
               ]
             })
               each item in items
-                +stack({class: ["trial-item", "align-items-center"]})
+                // Start: [stack/trial-item] 
+                +stack({
+                  class: [
+                    "trial-item",
+                    "align-items-center"
+                  ]
+                })
                   +icon({
-                    class: ["trial-item__icon", "mr-12"], 
+                    class: [
+                      "trial-item__icon",
+                      "mr-12"
+                    ], 
                     icon: "check"
                   })
                   +typography({variant: "body-small"})
                     | #{item}
-          // End: [Column 5] 
-        // End: [Grid] 
-      // End: [Stack] 
-    // End: [Container] 
-  // End: [Section: trial] 
+                // End: [stack/trial-item] 
+            // End: [stack/section-trial__items] 
+          // End: [column-5] 
+        // End: [grid] 
+      // End: [stack/section-trial__wrapper] 
+    // End: [container] 
