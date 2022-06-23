@@ -1,12 +1,33 @@
 import { Navbar, Preloader } from "@components/js";
-import { scroll } from "@src/scripts/scrollReveal";
+import { Animations, animateOnScroll } from "@src/scripts/animations";
+import { Expo } from "gsap";
+
+export const animations: Animations = new Animations({
+  duration: 1,
+  ease: Expo.easeOut
+});
+
+const animateElements = [
+  {
+    element: ".navbar",
+    animation: animations.fadeIn()
+  },
+  {
+    element: ".footer",
+    animation: animations.fadeIn()
+  }
+];
+
+function runAnimation() {
+  animateElements.forEach((item) => {
+    animateOnScroll({
+      element: item.element,
+      animation: item.animation
+    });
+  });
+}
 
 const preloader = new Preloader(".preloader");
-
-function runAnimation(): void {
-  scroll.reveal(".navbar", { origin: "top", distance: "0px" });
-  scroll.reveal(".footer", { distance: "0px" });
-}
 
 new Navbar(".menu", {
   control: ".menu-control",
@@ -15,7 +36,7 @@ new Navbar(".menu", {
 
 window.addEventListener("load", () => {
   preloader.hide(() => {
-    runAnimation();
     document.body.classList.remove("no-scroll");
   });
+  runAnimation();
 });

@@ -1,70 +1,121 @@
 import Swiper, { Navigation, Pagination } from "swiper";
-import { scroll } from "@src/scripts/scrollReveal";
+import { animations } from "@src/scripts/app";
+import { animateOnScroll } from "@src/scripts/animations";
 
-function runAnimation(): void {
-  // section-intro
-  scroll.reveal(".section-intro__heading");
-  scroll.reveal(`
-    .section-intro__description,
-    .section-intro__form,
-    .section-intro__label
-  `, { interval: 200, delay: 100 });
-  scroll.reveal(".section-intro__image", { distance: "0px", scale: 0.95 });
-  scroll.reveal(`
-    .section-intro__partners,
-    .section-intro .partner-item
-  `, { interval: 100 });
+const animateElements = [
+  {
+    element: `
+      .section-intro__heading,
+      .section-intro__description,
+      .section-intro__form,
+      .section-intro__label
+    `,
+    animation: animations.fadeUp({ stagger: 0.2 })
+  },
+  {
+    element: ".section-intro__image",
+    animation: animations.scaleIn({ duration: 2 })
+  },
+  {
+    element: `
+      .section-intro__partners,
+      .section-intro .partner-item
+    `,
+    animation: animations.fadeUp({ stagger: 0.1 })
+  },
+  {
+    element: `
+      .section-analytics .section-heading,
+      .section-analytics .analytics-item
+    `,
+    animation: animations.fadeUp({ stagger: 0.2 })
+  },
+  {
+    element: ".section-preview .section-heading",
+    animation: animations.fadeUp()
+  },
+  {
+    element: ".section-preview__image",
+    animation: animations.scaleIn()
+  },
+  {
+    element: ".section-preview .preview-item",
+    animation: animations.fadeUp({ stagger: 0.2 })
+  },
+  {
+    element: `
+      .section-analysis .section-heading__heading,
+      .section-analysis .section-heading__description,
+      .section-analysis__button
+    `,
+    animation: animations.fadeUp({ stagger: 0.2 })
+  },
+  {
+    element: ".section-analysis .analysis-item",
+    animation: animations.fadeUp({ stagger: 0.2 })
+  },
+  {
+    element: ".section-analysis__image",
+    animation: animations.scaleIn()
+  },
+  {
+    element: ".section-security .section-heading",
+    animation: animations.fadeUp()
+  },
+  {
+    element: ".section-security .security-item",
+    animation: animations.fadeUp({ stagger: 0.2 })
+  },
+  {
+    element: ".section-security .item-dot",
+    animation: animations.scaleIn({ stagger: 0.2, delay: 0.4 })
+  },
+  {
+    element: `
+      .section-features .section-heading__heading,
+      .section-features .section-heading__description,
+      .section-features__button
+    `,
+    animation: animations.fadeUp({ stagger: 0.2 })
+  },
+  {
+    element: ".section-features .feature-item",
+    animation: animations.fadeUp({ stagger: 0.1 })
+  },
+  {
+    element: ".section-features__image",
+    animation: animations.scaleIn()
+  },
+  {
+    element: ".section-reviews .section-heading",
+    animation: animations.fadeUp()
+  },
+  {
+    element: ".section-reviews .reviews-slider",
+    animation: animations.scaleIn()
+  },
+  {
+    element: `
+      .section-trial,
+      .section-trial .section-heading__heading,
+      .section-trial .section-heading__description,
+      .section-trial__form
+    `,
+    animation: animations.fadeUp({ stagger: 0.2 })
+  },
+  {
+    element: ".section-trial .trial-item",
+    animation: animations.fadeUp({ stagger: 0.1, delay: 0.5 })
+  }
+];
 
-  // section-analytics
-  scroll.reveal(".section-analytics .section-heading__heading");
-  scroll.reveal(".section-analytics .analytics-item", { interval: 200, delay: 300 });
-
-  // section-preview
-  scroll.reveal(".section-preview .section-heading__heading");
-  scroll.reveal(".section-preview__image", { scale: 0.95, delay: 300 });
-  scroll.reveal(".section-preview .preview-item", { interval: 200, delay: 300 });
-
-  // section-analysis
-  scroll.reveal(`
-    .section-analysis .section-heading__heading,
-    .section-analysis .section-heading__description,
-    .section-analysis__button,
-    .section-analysis .analysis-item
-  `, { interval: 200 });
-  scroll.reveal(".section-analysis__image", { distance: "0px", scale: 0.95 });
-
-  // section-security
-  scroll.reveal(".section-security .section-heading__heading");
-  scroll.reveal(".section-security .security-item", { interval: 200, delay: 100 });
-  scroll.reveal(".section-security .item-dot", { 
-    scale: 0,
-    interval: 300, 
-    delay: 100,
-    distance: "10px",
-    origin: "left"
+function runAnimation() {
+  animateElements.forEach((item) => {
+    animateOnScroll({
+      element: item.element,
+      animation: item.animation
+    });
   });
-
-  // section-features
-  scroll.reveal(`
-    .section-features .section-heading__heading,
-    .section-features .section-heading__description,
-    .section-features__button
-  `, { interval: 200 });
-  scroll.reveal(".section-features .feature-item", { interval: 100 });
-  scroll.reveal(".section-features__image", { distance: "0px", scale: 0.95 });
-
-  // section-reviews
-  scroll.reveal(".section-reviews .section-heading__heading");
-  scroll.reveal(".section-reviews .reviews-slider", { delay: 300 });
-
-  // section-trial
-  scroll.reveal(`
-    .section-trial,
-    .section-trial .section-heading__heading,
-    .section-trial .section-heading__description,
-    .section-trial__form
-  `, { interval: 200 });
-  scroll.reveal(".section-trial .trial-item", { interval: 100, delay: 300 });
 }
 
 new Swiper("#reviews-slider", {
