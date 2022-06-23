@@ -7,6 +7,7 @@ module.exports = {
   safelist: [
     /:active/, 
     /swiper/,
+    /preloader:/,
     "no-scroll",
     "display-block",
     "display-none"
