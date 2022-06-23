@@ -22,6 +22,7 @@ const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 module.exports = new FaviconsWebpackPlugin({
   logo: path.join(paths.main.src, paths.resources.images, "favicon.svg"),
   outputPath: paths.resources.favicon,
-  prefix: paths.resources.favicon + "/"
+  prefix: paths.resources.favicon + "/",
+  cache: true
   // TODO: Added favicon options
 });
