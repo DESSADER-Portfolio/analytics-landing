@@ -1,11 +1,5 @@
 import { Navbar, Preloader } from "@components/js";
-import { Animations, animateOnScroll } from "@src/scripts/animations";
-import { Expo } from "gsap";
-
-export const animations: Animations = new Animations({
-  duration: 1,
-  ease: Expo.easeOut
-});
+import { animations, animateOnScroll } from "@src/scripts/animations";
 
 const animateElements = [
   {

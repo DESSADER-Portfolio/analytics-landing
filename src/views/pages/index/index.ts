@@ -1,6 +1,5 @@
 import Swiper, { Navigation, Pagination } from "swiper";
-import { animations } from "@src/scripts/app";
-import { animateOnScroll } from "@src/scripts/animations";
+import { animations, animateOnScroll } from "@src/scripts/animations";
 
 const animateElements = [
   {
