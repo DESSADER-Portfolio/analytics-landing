@@ -6,6 +6,7 @@ mixin image(props = {})
   - const height = props.height || "100%";
   - const alt = props.alt || "Image";
   - const src = props.src || "";
+  - const lazy = props.lazy || false;
   -
     const classes = [
       rootClassName,
@@ -13,10 +14,12 @@ mixin image(props = {})
     ];
 
   img(
-    class = classes 
+    class = classes
     style = style
     width = width
     height = height
     alt = alt
-    src = require(`../../../assets/images/${src}`)
+    data-lazy-img = lazy
+    data-src = lazy ? require(`../../../assets/images/${src}`) : null
+    src = lazy ? null : require(`../../../assets/images/${src}`)
   )
