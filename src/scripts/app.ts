@@ -1,5 +1,14 @@
-import { Navbar, Preloader } from "@components/js";
+import { Navbar, Preloader, LazyImage } from "@components/js";
 import { animations, animateOnScroll } from "@src/scripts/animations";
+
+const lazyImages = document.querySelectorAll("[data-lazy-img]");
+
+lazyImages.forEach((image) => {
+  new LazyImage(image as HTMLImageElement, {
+    rootMargin: "200px 0px 200px 0px",
+    onLoad: (node) => node
+  });
+});
 
 const animateElements = [
   {
