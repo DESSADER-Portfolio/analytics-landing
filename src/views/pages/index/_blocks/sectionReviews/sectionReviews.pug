@@ -57,8 +57,7 @@ mixin sectionReviews(props = {})
               )
                 +image({
                   src: `user-${item.author.photoId}.webp`,
-                  alt: `${item.author.name} photo`,
-                  lazy: true
+                  alt: `${item.author.name} photo`
                 })
               // End: [review-item__photo] 
 
@@ -93,8 +92,7 @@ mixin sectionReviews(props = {})
                   src: `logo-${item.author.company}.svg`,
                   width: "100",
                   height: "30",
-                  alt: `${item.author.company} logo`,
-                  lazy: true
+                  alt: `${item.author.company} logo`
                 })
               // End: [review-item__content]
             // End: [stack/review-item]
